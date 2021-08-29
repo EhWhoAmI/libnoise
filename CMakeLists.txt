@@ -19,6 +19,10 @@ endif()
 set( SRC_DIR "src" )
 set( INC_DIR "include" )
 
+
+include_directories( ${INC_DIR}/noise )
+include_directories(examples)
+
 set(
 	SOURCES
 	${INC_DIR}/noise/basictypes.h
@@ -100,9 +104,9 @@ set(
 	${SRC_DIR}/module/translatepoint.cpp
 	${SRC_DIR}/module/turbulence.cpp
 	${SRC_DIR}/module/voronoi.cpp
+	examples/noiseutils.h
+	examples/noiseutils.cpp
 )
-
-include_directories( ${INC_DIR}/noise )
 
 add_library( libnoise ${LIB_TYPE} ${SOURCES} )
 

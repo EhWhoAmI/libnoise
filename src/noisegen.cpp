@@ -125,10 +125,11 @@ double noise::GradientNoise3D (double fx, double fy, double fz, int ix,
     & 0xffffffff;
   vectorIndex ^= (vectorIndex >> SHIFT_NOISE_GEN);
   vectorIndex &= 0xff;
+  vectorIndex <<= 2;
 
-  double xvGradient = g_randomVectors[(vectorIndex << 2)    ];
-  double yvGradient = g_randomVectors[(vectorIndex << 2) + 1];
-  double zvGradient = g_randomVectors[(vectorIndex << 2) + 2];
+  double xvGradient = g_randomVectors[(vectorIndex)];
+  double yvGradient = g_randomVectors[(vectorIndex) + 1];
+  double zvGradient = g_randomVectors[(vectorIndex) + 2];
 
   // Set up us another vector equal to the distance between the two vectors
   // passed to this function.
