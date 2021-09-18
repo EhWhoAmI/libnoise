@@ -128,7 +128,11 @@ if( NOT LIBNOISE_SKIP_INSTALL )
 	)
 
 	install(
-		DIRECTORY include/noise/ examples
+		DIRECTORY include/noise
 		DESTINATION include/${LIBNOISE_INCLUDE_DIR_NAME}
+	)
+        install(
+		DIRECTORY examples
+		DESTINATION include
 	)
 endif()
