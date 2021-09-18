@@ -20,7 +20,8 @@ set( SRC_DIR "src" )
 set( INC_DIR "include" )
 
 
-include_directories( ${INC_DIR}/noise )
+include_directories(${INC_DIR}/noise)
+include_directories(${INC_DIR})
 include_directories(examples)
 
 set(
@@ -131,7 +132,8 @@ if( NOT LIBNOISE_SKIP_INSTALL )
 		DIRECTORY include/noise
 		DESTINATION include/${LIBNOISE_INCLUDE_DIR_NAME}
 	)
-        install(
+
+	install(
 		DIRECTORY examples
 		DESTINATION include
 	)
